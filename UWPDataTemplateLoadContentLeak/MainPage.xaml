@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="UWPDataTemplateLoadContentLeak.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:UWPDataTemplateLoadContentLeak"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid HorizontalAlignment="Center" ColumnSpacing="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center" Spacing="8">
+            <Button
+                HorizontalAlignment="Stretch"
+                Click="FrameworkTemplateButton_Click"
+                Content="FrameworkTemplate" />
+            <Button
+                HorizontalAlignment="Stretch"
+                Click="UserControlTemplateButton_Click"
+                Content="UserControlTemplate" />
+            <Button
+                HorizontalAlignment="Stretch"
+                Click="FrameworkControlHostUserControlTemplateButton_Click"
+                Content="FrameworkControlHostUserControlTemplate" />
+        </StackPanel>
+        <Button
+            Grid.Column="1"
+            Click="GCCollectButton_Click"
+            Content="GC collect" />
+        <Button
+            Grid.Column="2"
+            Click="ShowAliveCountButton_Click"
+            Content="Show alive count" />
+    </Grid>
+</Page>
